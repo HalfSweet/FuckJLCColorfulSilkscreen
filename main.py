@@ -59,6 +59,7 @@ def TopSVG(originX, originY, PCBWidth, PCBHeight):
     生成顶层丝印的SVG
     :return:
     """
+    logging.info('正在处理顶层丝印文件中……')
     root = ET.Element('svg', attrib={'width': f'{PCBWidth}mm', 'height': f'{PCBHeight}mm',
                                      'boardBox': f'{mm2mil10(originX)} {mm2mil10(originY)} {mm2mil10(PCBWidth)} {mm2mil10(PCBHeight)}',
                                      'viewBox': f'{mm2mil10(originX)} {mm2mil10(originY)} {mm2mil10(PCBHeight)} {mm2mil10(PCBHeight)}',
@@ -146,6 +147,7 @@ def BottomSVG(originX, originY, PCBWidth, PCBHeight):
     生成底层丝印的SVG
     :return:
     """
+    logging.info('正在处理底层丝印文件中……')
     root = ET.Element('svg', attrib={'width': f'{PCBWidth}mm', 'height': f'{PCBHeight}mm',
                                      'boardBox': f'{mm2mil10(originX)} {mm2mil10(originY)} {mm2mil10(PCBWidth)} {mm2mil10(PCBHeight)}',
                                      'viewBox': f'{mm2mil10(originX)} {mm2mil10(originY)} {mm2mil10(PCBHeight)} {mm2mil10(PCBHeight)}',
@@ -255,7 +257,7 @@ def GetBorderOrigin(path):
 
 def EncryptFile():
     # svg_file = './fix.svg'
-
+    logging.info('正在加密文件...')
     aes_key = secrets.token_bytes(16)
     aes_iv = secrets.token_bytes(16)
 
@@ -299,6 +301,7 @@ def EncryptFile():
         f.write(enc_svg_data)
         f.write(tag)
 
+    logging.info('加密完成！')
 
 def CopyFile():
     shutil.copytree(args.gerberPath, "./out")
