@@ -31,4 +31,4 @@ python main.py -g gerberPath -o "./out" -ti "./t.png" -bi "./b.png"
 <https://www.amobbs.com/thread-5760459-1-1.html#34>
 
 ## 致谢
-感谢[小松果](https://github.com/seishinkouk)和索马里的海贼两位大佬对我的帮助，特别是索马里的海贼大佬深入浅出地对我解释了整套原理，让我得到了一次宝贵的学习机会。
+感谢[小松果](https://github.com/seishinkouki)和索马里的海贼两位大佬对我的帮助，特别是索马里的海贼大佬深入浅出地对我解释了整套原理，让我得到了一次宝贵的学习机会。
